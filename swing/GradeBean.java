@@ -14,12 +14,20 @@ package com.jse.swing;
 출력되게 해주세요 
 * */
 import java.util.Scanner;
-public class Grade {
+public class GradeBean {
 	
 	private String name;
 	private int korean;
 	private int english;
 	private int math;
+	
+	public GradeBean(String name, int korean, int english, int math) {
+		this.name = name;
+		this.korean = korean;
+		this.english = english;
+		this.math = math;
+		
+	}
 	
 	public void setName(String name) {
 		this.name = name;
