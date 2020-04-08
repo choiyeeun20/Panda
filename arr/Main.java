@@ -18,7 +18,8 @@ public class Main {
 				case 2: 
 					CardBean[] cards = service.getCards();
 					for(int i=0; i<3; i++) {
-						System.out.println(String.format("카드모양%s 카드넘버 %d", cards[i].getKind(), cards[i].getNumber()));
+						System.out.println(String.format("카드모양%s 카드넘버 %d",
+								cards[i].getKind(), cards[i].getNumber()));
 
 					}
 					break;
