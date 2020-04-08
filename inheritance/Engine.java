@@ -26,8 +26,8 @@ public class Engine {
 			case "2":
 				Phone[] phones = service.getPhones();
 				for (int i = 0; i < 3; i++) {
-					message += (String.format("출력 :%s %s %s\n", phones[i].getPhoneNumber(), phones[i].getName(),
-							phones[i].getCompany()));
+					message += (String.format("출력 :%s %s %s\n",
+							phones[i].getPhoneNumber(), phones[i].getName(),phones[i].getCompany()));
 				}
 				JOptionPane.showMessageDialog(null, message);
 				break;
@@ -42,8 +42,9 @@ public class Engine {
 			case "4":
 				CelPhone[] celPhones = service.getCelphones();
 				for (int i = 0; i < 3; i++) {
-					message += (String.format("출력:%s,%s,%s,%s \n", celPhones[i].getPhoneNumber(),
-							celPhones[i].getName(), celPhones[i].getCompany(), celPhones[i].getMove()));
+					message += (String.format("출력:%s,%s,%s,%s \n", 
+							celPhones[i].getPhoneNumber(),celPhones[i].getName(),
+							celPhones[i].getCompany(), celPhones[i].getMove()));
 				}
 				JOptionPane.showMessageDialog(null, message);
 				break;
@@ -58,8 +59,10 @@ public class Engine {
 			case "6":
 				Iphone[] iphones = service.getIphones();
 				for (int i = 0; i < 3; i++) {
-					message += (String.format("출력:%s,%s,%s,%s,%s \n", iphones[i].getPhoneNumber(), iphones[i].getName(),
-							iphones[i].getCompany(), iphones[i].getMove(), iphones[i].getSearch()));
+					message += (String.format("출력:%s,%s,%s,%s,%s \n",
+							iphones[i].getPhoneNumber(), iphones[i].getName(),
+							iphones[i].getCompany(), iphones[i].getMove(),
+							iphones[i].getSearch()));
 				}
 				JOptionPane.showMessageDialog(null, message);
 
@@ -74,8 +77,9 @@ public class Engine {
 			case "8":
 				GalaxyNote[] galaxyNotes = service.getGalaxynote();
 				for (int i = 0; i < 3; i++) {
-					message += String.format("출력: %s, %s, %s, %s,%s,%s \n", galaxyNotes[i].getPhoneNumber(),
-							galaxyNotes[i].getSearch(), galaxyNotes[i].getName(), galaxyNotes[i].getCompany(),
+					message += String.format("출력: %s, %s, %s, %s,%s,%s \n", 
+							galaxyNotes[i].getPhoneNumber(),galaxyNotes[i].getName(),
+							galaxyNotes[i].getCompany(), galaxyNotes[i].getSearch(),
 							galaxyNotes[i].getMove(), galaxyNotes[i].getBigSize());
 				}
 				JOptionPane.showMessageDialog(null, message);
