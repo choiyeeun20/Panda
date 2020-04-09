@@ -50,30 +50,30 @@ public class GradeServcieImpl implements GradeService {
 
 	@Override
 	public String record(Grade grade) {
-		String resule = "";
+		String result = "";
 		int average = average(grade);
 
 		if (average >= 90) {
-			resule = "A";
+			result = "A";
 		} else if (average >= 80) {
-			resule = "B";
+			result = "B";
 		} else if (average >= 70) {
-			resule = "C";
+			result = "C";
 		} else if (average >= 60) {
-			resule = "D";
+			result = "D";
 		} else if (average >= 50) {
-			resule = "E";
+			result = "E";
 		} else {
-			resule = "F";
+			result = "F";
 		}
-		return resule;
+		return result;
 	}
 
 	@Override
 	public String printGrades() {
 		String result = "";
+		Grade[] grades = getGrades();
 		for (int i = 0; i < 3; i++) {
-			Grade[] grades = getGrades();
 			result += String.format("[%s : 총점 %d 점, 평균 %d 점,학점 : %s] \n", grades[i].getName(), total(grades[i]),
 					average(grades[i]), record(grades[i]));
 		}

@@ -9,11 +9,8 @@ public class GradeController {
 		Grade grade = null;
 		while (true) {
 			switch (JOptionPane.showInputDialog(Constants.GRADE_MENU)) {
-			case "0":
-				System.out.println("종료");
-				return;
+			case "0":return;
 			case "1":
-				System.out.println("성적표");
 				for (int i = 0; i < 3; i++) {
 					String[] values = JOptionPane.showInputDialog(Constants.GRADE_INPUT).split(",");
 					grade = new Grade();
