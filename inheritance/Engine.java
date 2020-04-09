@@ -1,24 +1,19 @@
 package com.jse.inheritance;
-
-import java.util.Scanner;
 import javax.swing.JOptionPane;
-
+import com.jse.util.Constants;
 public class Engine {
+	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 		PhoneService service = new PhoneService();
-
+		String message = "";
+		
 		while (true) {
 			System.out.println();
-			String message = "";
-			switch (JOptionPane.showInputDialog("0.종료\t1.집전화 입력 \t.2.집전화 출력"
-					+ "\t 3. 휴대전화입력\t 4. 휴대전화출력\t 5.아이폰입력 \t "
-					+ "6.아이폰출력  \t 7.갤럭시입력 \t 8.갤럭시출력")) {
-			case "0":
-				return;
+			switch (JOptionPane.showInputDialog(Constants.MENU)) {
+			case "0":return;
 			case "1":
 				for (int i = 0; i < 3; i++) {
-					String[] values = JOptionPane.showInputDialog("입력: phonenuumber, name,company").split(",");
+					String[] values = JOptionPane.showInputDialog(Constants.PHONE_MENU).split(",");
 					service.add(new Phone(values[0], values[1], values[2]));
 				}
 				break;
@@ -26,14 +21,13 @@ public class Engine {
 			case "2":
 				Phone[] phones = service.getPhones();
 				for (int i = 0; i < 3; i++) {
-					message += (String.format("출력 :%s %s %s\n",
-							phones[i].getPhoneNumber(), phones[i].getName(),phones[i].getCompany()));
+					message += phones[i].toString();
 				}
 				JOptionPane.showMessageDialog(null, message);
 				break;
 			case "3":
 				for (int i = 0; i < 3; i++) {
-					String[] values = JOptionPane.showInputDialog("입력: phonenuumber, name,company,true").split(",");
+					String[] values = JOptionPane.showInputDialog(Constants.CELPHONE_MENU).split(",");
 					service.add(new CelPhone(values[0], values[1], values[2], true));
 				}
 
@@ -42,45 +36,35 @@ public class Engine {
 			case "4":
 				CelPhone[] celPhones = service.getCelphones();
 				for (int i = 0; i < 3; i++) {
-					message += (String.format("출력:%s,%s,%s,%s \n", 
-							celPhones[i].getPhoneNumber(),celPhones[i].getName(),
-							celPhones[i].getCompany(), celPhones[i].getMove()));
+					message += celPhones[i].toString();
 				}
 				JOptionPane.showMessageDialog(null, message);
 				break;
 
 			case "5":
 				for (int i = 0; i < 3; i++) {
-					String[] values = JOptionPane.showInputDialog("입력: phoneNumber, name, company,true, search")
-							.split(",");
+					String[] values = JOptionPane.showInputDialog(Constants.IPHONE_MENU).split(",");
 					service.add(new Iphone(values[0], values[1], values[2], true, values[4]));
 				}
 				break;
 			case "6":
 				Iphone[] iphones = service.getIphones();
 				for (int i = 0; i < 3; i++) {
-					message += (String.format("출력:%s,%s,%s,%s,%s \n",
-							iphones[i].getPhoneNumber(), iphones[i].getName(),
-							iphones[i].getCompany(), iphones[i].getMove(),
-							iphones[i].getSearch()));
+					message += iphones[i].toString();
 				}
 				JOptionPane.showMessageDialog(null, message);
 
 				break;
 			case "7":
 				for (int i = 0; i < 3; i++) {
-					String[] values = JOptionPane.showInputDialog("입력: phonenuumber, name, company, true, search, bigsize")
-							.split(",");
+					String[] values = JOptionPane.showInputDialog(Constants.GALAXY_NOTE_MENU).split(",");
 					service.add(new GalaxyNote(values[0], values[1], values[2], true, values[4], values[5]));
 				}
 				break;
 			case "8":
 				GalaxyNote[] galaxyNotes = service.getGalaxynote();
 				for (int i = 0; i < 3; i++) {
-					message += String.format("출력: %s, %s, %s, %s,%s,%s \n", 
-							galaxyNotes[i].getPhoneNumber(),galaxyNotes[i].getName(),
-							galaxyNotes[i].getCompany(), galaxyNotes[i].getSearch(),
-							galaxyNotes[i].getMove(), galaxyNotes[i].getBigSize());
+					message += galaxyNotes[i].toString();
 				}
 				JOptionPane.showMessageDialog(null, message);
 				break;
