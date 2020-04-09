@@ -1,7 +1,11 @@
-package com.jse.app;
+package com.jse.game;
 import java.util.Scanner;
+import com.jse.member.Member;
+import com.jse.member.Kaup;
+import com.jse.util.Calculator;
+
 import java.util.Random;
-public class Engine {
+public class GameController {
 	public static void main(String[] args) {
 		
 		Random random = new Random();
@@ -28,13 +32,13 @@ public class Engine {
 			case 1: 
 				System.out.println("회원가입");
 				System.out.println("아이디 입력");
-				member.setId(scanner.next());
+				member.setUserid(scanner.next());
 			break;
 			case 2:
 				System.out.println("로그인");
 				System.out.println("아이디 입력");
 				String id2 = scanner.next();
-				String returnId = member.getId();
+				String returnId = member.getUserid();
 				System.out.println("로그인된 아이디:"+ returnId);
 				if(id2.equals(returnId)) {
 					System.out.println("로그인 성공");

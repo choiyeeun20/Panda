@@ -1,13 +1,15 @@
-package com.jse.swing;
+package com.jse.grade;
 import java.util.Scanner;
 
-public class Engine {
+import com.jse.member.Member;
+
+public class GradeController {
 	public static void main(String[] args) {
 		 
 		Scanner scanner = new Scanner(System.in);
 		GradeService gradeservice = new GradeService();
 		
-		MemberBean [] member = new MemberBean[3];
+		Member [] member = new Member[3];
 		
 		while(true) {
 			System.out.println("0.종료 1.성적표입력 2.성적표 출력 3.회원등록" );
@@ -17,7 +19,7 @@ public class Engine {
 				for(int i=0; i<3; i++) {
 					System.out.println("이름,국어,영어,수학 입력");
 					gradeservice.add
-							(new GradeBean(
+							(new Grade(
 							scanner.next(),
 							scanner.nextInt(),
 							scanner.nextInt(),
@@ -25,7 +27,7 @@ public class Engine {
 				}
 				break;
 			case 2: 
-				GradeBean[] grades = gradeservice.getGrades();
+				Grade[] grades = gradeservice.getGrades();
 				for(int i=0;i<3;i++) {
 					System.out.println(String.format("[%s : 총점 %d 점, 평균%d점 ,학점 %s]", 
 							 grades[i].getName(), 
@@ -48,14 +50,14 @@ public class Engine {
 			}
 	
 	
-	static GradeBean input(Scanner scanner) {
+	static Grade input(Scanner scanner) {
 		System.out.println("이름, 국어, 영어, 수학 입력");
-		return new GradeBean (scanner.next(),scanner.nextInt(),
+		return new Grade (scanner.next(),scanner.nextInt(),
 				scanner.nextInt(),scanner.nextInt());
 	}
-	public static MemberBean join (Scanner scanner) {
+	public static Member join (Scanner scanner) {
 		System.out.println("아이디, 비밀번호, 이름, 나이");
-		return new MemberBean(scanner.next(),scanner.next(),
+		return new Member(scanner.next(),scanner.next(),
 				scanner.next(),scanner.nextInt());
 	}
 	}
