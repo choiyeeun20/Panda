@@ -11,6 +11,7 @@ public class Constants {
 	public final static String GRADE_INPUT = "이름,국어,영어,수학 입력";
 	public final static String CARD_MENU= "0.Exit 1.카드 3장 받기 2.출력";
 	public final static String CARD_INPUT= "카드 3장 받기 모양, 숫자";
+	public final static String MEMBER_MENU= "0. Exit 1.회원가입 2.로그인";
 	
 	
 }

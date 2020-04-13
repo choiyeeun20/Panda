@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void add(Member member) {
+		
 		members[count] = member;
 		count++;
 	}
