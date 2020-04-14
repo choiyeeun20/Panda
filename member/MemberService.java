@@ -7,5 +7,6 @@ public interface MemberService {
 	public Member[] getMembers();
 
 	public void add(Member member);
-
+	
+	public Member login(Member member);
 }

@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
 public class LoginView extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	JButton saveButton, cancelButton;

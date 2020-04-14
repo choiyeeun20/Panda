@@ -1,11 +1,11 @@
 package com.jse.grade;
 
-public class GradeServcieImpl implements GradeService {
+public class GradeServiceImpl implements GradeService {
 
 	private Grade[] grades;
 	private int count;
 
-	public GradeServcieImpl() {
+	public GradeServiceImpl() {
 		grades = new Grade[3];
 		count = 0;
 	}

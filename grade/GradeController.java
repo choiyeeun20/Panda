@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class GradeController {
 	public static void main(String[] args) {
-		GradeService gradeService = new GradeServcieImpl();
+		GradeService gradeService = new GradeServiceImpl();
 		Grade grade = null;
 		while (true) {
 			switch (JOptionPane.showInputDialog(Constants.GRADE_MENU)) {
