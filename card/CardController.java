@@ -19,7 +19,7 @@ public class CardController {
 					}
 					break;
 					
-				case "2": JOptionPane.showMessageDialog(null,cardService.printCard());
+				case "2": JOptionPane.showMessageDialog(null,cardService.list());
 				
 					break;
 			

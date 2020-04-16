@@ -92,7 +92,7 @@ public class RegistrationFormDesign extends JFrame{
         container.add(addrText);
         
   
-        submitButton = new JButton("Submit"); 
+        submitButton = new JButton("submit"); 
         submitButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
         submitButton.setSize(100, 20); 
         submitButton.setLocation(150, 450); 

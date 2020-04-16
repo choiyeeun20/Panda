@@ -4,7 +4,7 @@ import com.jse.util.Constants;
 public class PhoneController {
 	
 	public static void main(String[] args) {
-		PhoneService service = new PhoneService();
+		PhoneService service = new PhoneServiceImpl();
 		String message = "";
 		
 		while (true) {
@@ -19,7 +19,7 @@ public class PhoneController {
 				break;
 
 			case "2":
-				Phone[] phones = service.getPhones();
+				Phone[] phones = service.phoneList();
 				for (int i = 0; i < 3; i++) {
 					message += phones[i].toString();
 				}
@@ -34,7 +34,7 @@ public class PhoneController {
 				break;
 
 			case "4":
-				CelPhone[] celPhones = service.getCelphones();
+				CelPhone[] celPhones = service.celphoneList();
 				for (int i = 0; i < 3; i++) {
 					message += celPhones[i].toString();
 				}
@@ -48,7 +48,7 @@ public class PhoneController {
 				}
 				break;
 			case "6":
-				Iphone[] iphones = service.getIphones();
+				Iphone[] iphones = service.iphoneList();
 				for (int i = 0; i < 3; i++) {
 					message += iphones[i].toString();
 				}
@@ -62,7 +62,7 @@ public class PhoneController {
 				}
 				break;
 			case "8":
-				GalaxyNote[] galaxyNotes = service.getGalaxynote();
+				GalaxyNote[] galaxyNotes = service.galaxynoteList();
 				for (int i = 0; i < 3; i++) {
 					message += galaxyNotes[i].toString();
 				}
