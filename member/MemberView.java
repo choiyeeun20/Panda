@@ -239,11 +239,11 @@ public class MemberView extends JFrame implements ActionListener {
 			
 		}else if(e.getSource() == nameButton) {
 			JOptionPane.showMessageDialog(this, "Name : " + nameText.getText());
-			Member[] returnName = memberService.searchByName(nameText.getName());
-			if(returnName != null) {
+			Member[] returnNames = memberService.searchByName(nameText.getText());
+			if(returnNames != null) {
 			String result ="";
-			for(int i=0;i<returnName.length;i++) {
-				result += returnName[i].toString()+"\n";
+			for(int i=0;i<returnNames.length;i++) {
+				result += returnNames[i].toString()+"\n";
 			} 
 			resultText.setText(result);
 			}else {
@@ -251,11 +251,11 @@ public class MemberView extends JFrame implements ActionListener {
 			}
 	
 		}else if(e.getSource() == genderButton) {
-			memberService.searchByGender(ssnText.getText());
+			//memberService.searchByGender(ssnText.getText());
 			
 			
 		}else if(e.getSource() == countButton) {
-			
+			resultText.setText(String.valueOf(memberService.Count()));
 		}else if(e.getSource() == updateButton) {
 			String userid = useridText.getText();
 			String newPassword = passwordText.getText();
@@ -264,11 +264,15 @@ public class MemberView extends JFrame implements ActionListener {
 			updateMember.setPassword(newPassword);
 			memberService.update(updateMember);
 		}else if(e.getSource() == deleteButton) {
-	
+			Member deleteMember = new Member();
+			deleteMember.setUserid(useridText.getText());
+			deleteMember.setPassword(passwordText.getText());
+			memberService.delete(deleteMember);
+		}
 }
 }
 		
 
-}
+
 
 
