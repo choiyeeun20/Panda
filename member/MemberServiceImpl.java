@@ -105,13 +105,7 @@ public class MemberServiceImpl implements MemberService {
 				members[i] = members[count-1];
 				members[count-1] =null;
 				count--;
-			}
-	}
-
-
-	
-
-	}
-
-	
+		   }
+	   }
+    } 
 }
